@@ -48,7 +48,7 @@ function App() {
       // Set setHasNoResult to true there is an error
       setHasNoResult(true);
     }
-  }, []);
+  }, [ filterHourlyForecast]);
 //  Fetches default city (Swabi, Pakistan) weather data on intial render
   useEffect(() => {
     const defaultCity = "Swabi, Pakistan";
