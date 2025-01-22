@@ -57,7 +57,7 @@ function App() {
   }, []);
 
   return (
-    <div className="py-4 bg-gradient-to-t from-[#352163] to-[#33143C] max-w-[410px] mx-auto my-0 shadow-lg rounded-[10px]">
+    <div className="py-4 bg-gradient-to-t from-[#352163] to-[#33143C] max-w-[410px] mx-auto my-0 shadow-lg rounded-[10px] container-style">
       {/* Search Section */}
       <SearchSection
         getWeatherData={getWeatherData}

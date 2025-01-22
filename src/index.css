@@ -25,3 +25,24 @@ body{
         padding: 20px;
     }
 }
+
+@layer utilities {
+    .container-style{
+      position: relative;
+      opacity: 0.95;
+      z-index: 1;
+    }
+    .container-style::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      height: 100%;
+      width: 100%;
+      background-image: url("/public/clouds.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      pointer-events: none;
+    }
+  }
