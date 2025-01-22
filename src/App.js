@@ -11,7 +11,7 @@ function App() {
   const [hourlyForecast, setHourlyForecast] = useState([]);
   const [hasNoResult, setHasNoResult] = useState(false);
   const searcValueRef = useRef(null);
-  const filterHourlyForecast = (HourelyData) => {
+  const filterHourlyForecast = useCallback((HourelyData) => {
     const currentHour = new Date().setMinutes(0, 0, 0);
     const next24Hours = currentHour + 24 * 60 * 60 * 1000;
     // filter the data for the next 24 hours
@@ -20,8 +20,8 @@ function App() {
       return forecastTime >= currentHour && forecastTime <= next24Hours;
     });
     setHourlyForecast(next24HoursData);
-  };
-  const getWeatherData = async (API_Url) => {
+  }, []);
+  const getWeatherData = useCallback(async (API_Url) => {
     setHasNoResult(false);
     window.innerWidth <= 768 && searcValueRef.current.focus();
 
@@ -48,13 +48,13 @@ function App() {
       // Set setHasNoResult to true there is an error
       setHasNoResult(true);
     }
-  };
+  }, []);
 //  Fetches default city (Swabi, Pakistan) weather data on intial render
   useEffect(() => {
     const defaultCity = "Swabi, Pakistan";
     const API_URL = ` http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${defaultCity}&days=5`;
     getWeatherData(API_URL); //Fetches weather details for enter city
-  }, []);
+  }, [API_KEY, getWeatherData]);
 
   return (
     <div className="py-4 bg-gradient-to-t from-[#352163] to-[#33143C] max-w-[410px] mx-auto my-0 shadow-lg rounded-[10px] container-style">
