@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import CurrentWeather from "./Components/CurrentWeather";
 import HourleyWeather from "./Components/HourleyWeather";
 import SearchSection from "./Components/SearchSection";
