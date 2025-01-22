@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#F5EEFF, #DAC3F8);
+    font-family: 'Montseerat', sans-serif;
+}
+
+.scrollbar-style{
+    scrollbar-color: transparent transparent;
+}
+
+.scrollbar-style:hover{
+    scrollbar-color: #c5bcdb transparent;
+}
+
+@media (max-width: 453px) {
+    body{
+        padding: 20px;
+    }
+}
