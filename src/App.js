@@ -56,7 +56,7 @@ function App() {
 	//  Fetches default city (Swabi, Pakistan) weather data on intial render
 	useEffect(() => {
 		const defaultCity = 'Swabi, Pakistan';
-		const API_URL = ` http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${defaultCity}&days=5`;
+		const API_URL = ` https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${defaultCity}&days=5`;
 		getWeatherData(API_URL); //Fetches weather details for enter city
 	}, [API_KEY, getWeatherData]);
 
