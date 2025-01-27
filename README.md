@@ -1,6 +1,8 @@
 
 # Weather App
 
+![Weather App](/all-devices-black%20(4).png)
+
 ## Overview
 The Weather App is a user-friendly web application that allows users to check the current weather conditions and forecast for any city worldwide. It is built using React and styled with Tailwind CSS to ensure a responsive and visually appealing design.
 
