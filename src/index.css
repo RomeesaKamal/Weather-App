@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(#F5EEFF, #DAC3F8);
+    font-family: 'Montseerat', sans-serif;
+}
+
+.scrollbar-style{
+    scrollbar-color: transparent transparent;
+}
+
+.scrollbar-style:hover{
+    scrollbar-color: #c5bcdb transparent;
+}
+
+@media (max-width: 453px) {
+    body{
+        padding: 20px;
+    }
+}
+
+@layer utilities {
+    .container-style{
+      position: relative;
+      opacity: 0.95;
+      z-index: 1;
+    }
+    .container-style::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      height: 100%;
+      width: 100%;
+      background-image: url("/public/clouds.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      pointer-events: none;
+    }
+  }
